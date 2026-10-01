@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#e8e0c8">
+<title>虫の観察記 | 昆虫の勉強サイト</title>
+<meta name="description" content="昆虫を学びはじめた人の観察ノート。勉強の記録、漫画やイラスト、小さな論考をまとめています。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Shippori+Mincho:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #e8e0c8;
+    --paper-deep: #d9cfb0;
+    --ink: #2b281f;
+    --sepia: #6b4a2b;
+    --olive: #4f5d33;
+    --pin: #a1301f;
+    --serif: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+    --latin: "IM Fell English", "Hoefler Text", Georgia, serif;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--paper-deep); }
+  body {
+    margin: 0;
+    padding: 1.5rem 1rem 3rem;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 1.0625rem;
+    line-height: 2;
+  }
+  .page { max-width: 40rem; margin: 0 auto; }
+
+  /* 表紙 */
+  .cover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(1rem, 4vw, 2rem);
+    padding: clamp(1.25rem, 5vw, 2.5rem) 1rem;
+    border: 4px double var(--ink);
+  }
+  .plate { width: clamp(120px, 36vw, 210px); height: auto; flex: none; }
+  .plate .ink { fill: var(--ink); }
+  .plate .line { fill: none; stroke: var(--ink); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+  .plate .vein { fill: none; stroke: #6f6853; stroke-width: 1.2; }
+  .plate .antenna { fill: none; stroke: var(--ink); stroke-width: 2.5; stroke-linecap: round; }
+  .plate .pin { stroke: #8a8576; stroke-width: 2; }
+  .plate .pinhead { fill: var(--pin); }
+  .plate .tag { fill: var(--paper); stroke: var(--sepia); stroke-width: 1.2; }
+  .plate text { font-family: var(--latin); font-style: italic; font-size: 11px; fill: var(--sepia); text-anchor: middle; }
+
+  .cover .sub, .cover h1 {
+    writing-mode: vertical-rl;
+    margin: 0;
+    font-weight: 600;
+  }
+  .cover .sub { font-size: clamp(0.85rem, 2.6vw, 1rem); letter-spacing: 0.3em; color: var(--sepia); line-height: 1.8; }
+  .cover h1 { font-size: clamp(2.6rem, 9vw, 4.2rem); font-weight: 800; letter-spacing: 0.18em; line-height: 1.3; }
+
+  .original {
+    margin: 0.9rem 0 0;
+    text-align: center;
+    font-family: var(--latin);
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--sepia);
+    line-height: 1.6;
+  }
+
+  /* はじめに */
+  .intro { margin-top: 2.5rem; }
+  .intro p { margin: 0 0 1.2rem; text-align: left; }
+
+  /* 目次 */
+  .contents { margin-top: 2.75rem; padding-top: 1.5rem; border-top: 1px solid var(--ink); }
+  .contents h2 { margin: 0 0 1rem; font-size: 1.15rem; font-weight: 800; letter-spacing: 0.5em; }
+  .contents ul { list-style: none; margin: 0; padding: 0; }
+  .contents li { margin-bottom: 1.25rem; }
+  .contents a { display: block; color: inherit; text-decoration: none; }
+  .row { display: flex; align-items: baseline; gap: 0.5rem; }
+  .row .name { font-size: 1.2rem; font-weight: 600; }
+  .row .leader { flex: 1; border-bottom: 2px dotted var(--sepia); transform: translateY(-0.3em); min-width: 1rem; }
+  .row .kind { font-size: 0.9rem; color: var(--olive); font-weight: 600; }
+  .contents .note { display: block; margin-top: 0.1rem; font-size: 0.95rem; line-height: 1.8; color: #4a463a; }
+  .contents a:hover .name { color: var(--pin); }
+  .contents a:focus-visible { outline: 2px solid var(--pin); outline-offset: 4px; }
+
+  footer { margin-top: 3rem; padding-top: 1rem; border-top: 4px double var(--ink); text-align: center; font-size: 0.85rem; color: var(--sepia); line-height: 1.8; }
+  footer .latin { font-family: var(--latin); font-style: italic; font-size: 0.95rem; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="cover">
+      <svg class="plate" viewBox="0 0 240 300" role="img" aria-label="ピンで留められたスカラベ（フンコロガシ）の標本画">
+        <path class="line" d="M92 112 L58 96 L38 108 M88 160 L48 158 L30 178 M92 205 L58 228 L48 256"/>
+        <path class="line" d="M148 112 L182 96 L202 108 M152 160 L192 158 L210 178 M148 205 L182 228 L192 256"/>
+        <path class="antenna" d="M104 90 L96 76 M136 90 L144 76"/>
+        <path class="ink" d="M98 96 L104 88 L110 94 L116 86 L124 86 L130 94 L136 88 L142 96 Q142 106 120 108 Q98 106 98 96 Z"/>
+        <ellipse class="ink" cx="120" cy="182" rx="48" ry="62"/>
+        <ellipse class="ink" cx="120" cy="118" rx="44" ry="26"/>
+        <path class="vein" d="M120 126 L120 244 M100 134 Q95 188 104 236 M140 134 Q145 188 136 236"/>
+        <line class="pin" x1="120" y1="30" x2="120" y2="150"/>
+        <circle class="pinhead" cx="120" cy="26" r="6"/>
+        <rect class="tag" x="62" y="268" width="116" height="24" rx="2"/>
+        <text x="120" y="284">Scarabaeus sacer</text>
+      </svg>
+      <p class="sub">昆虫を学ぶ人のノート</p>
+      <h1>虫の観察記</h1>
+    </div>
+    <p class="original">Souvenirs d’un petit entomologiste</p>
+  </header>
+
+  <section class="intro" aria-label="はじめに">
+    <p>虫はどこにでもいるのに、そのほとんどを、わたしはまだ知らない。このサイトは、昆虫を学びはじめた人間が、観察して、本を読んで、わからなかったことまで含めて書きとめていくノートです。</p>
+    <p>立派な発見はできなくても、足もとの小さな生きものをじっと見ることは、だれにでもできます。見たものは文章にも、絵にもします。</p>
+  </section>
+
+  <nav class="contents" aria-label="目次">
+    <h2>目次</h2>
+    <ul>
+      <li>
+        <a href="blog.html">
+          <span class="row"><span class="name">ノート</span><span class="leader"></span><span class="kind">日々の記録</span></span>
+          <span class="note">勉強の進み具合を、日付と短い日記で書き留めています。</span>
+        </a>
+      </li>
+      <li>
+        <a href="column.html">
+          <span class="row"><span class="name">コラム</span><span class="leader"></span><span class="kind">漫画と小論</span></span>
+          <span class="note">虫にまつわる漫画、イラスト、四コマ。それから、軽い読みものの小論文。</span>
+        </a>
+      </li>
+      <li>
+        <a href="about.html">
+          <span class="row"><span class="name">このサイトについて</span><span class="leader"></span><span class="kind">はじめに</span></span>
+          <span class="note">サイトの目的と、ここを書いている人のこと。</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <footer>
+    <div class="latin">Souvenirs d’un petit entomologiste</div>
+    <div>虫の観察記</div>
+  </footer>
+
+</div>
+</body>
+</html>
