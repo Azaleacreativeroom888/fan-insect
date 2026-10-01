@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#e8e0c8">
+<title>ノート | 虫の観察記</title>
+<meta name="description" content="昆虫の勉強の進み具合を、日付と短い日記で書き留めたノート。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Shippori+Mincho:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #e8e0c8;
+    --paper-deep: #d9cfb0;
+    --ink: #2b281f;
+    --sepia: #6b4a2b;
+    --olive: #4f5d33;
+    --pin: #a1301f;
+    --serif: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+    --latin: "IM Fell English", "Hoefler Text", Georgia, serif;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--paper-deep); }
+  body {
+    margin: 0;
+    padding: 1.5rem 1rem 3rem;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 1.0625rem;
+    line-height: 2;
+  }
+  .page { max-width: 40rem; margin: 0 auto; }
+  a { color: inherit; }
+  a:hover { color: var(--pin); }
+  a:focus-visible { outline: 2px solid var(--pin); outline-offset: 4px; }
+
+  /* ページ見出し */
+  .topnav { display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; font-size: 0.95rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--ink); line-height: 1.8; }
+  .topnav a { text-decoration: none; }
+  .topnav a[aria-current="page"] { font-weight: 800; border-bottom: 2px solid var(--pin); }
+
+  .head { margin: 2.5rem 0 2rem; padding: 1.5rem 1rem; border: 4px double var(--ink); text-align: center; }
+  .head h1 { margin: 0; font-size: clamp(2rem, 7vw, 2.8rem); font-weight: 800; letter-spacing: 0.4em; padding-left: 0.4em; line-height: 1.5; }
+  .head .latin { margin: 0.2rem 0 0; font-family: var(--latin); font-style: italic; color: var(--sepia); font-size: 1.05rem; line-height: 1.6; }
+  .lead { margin: 0 0 2rem; }
+
+  /* ノートの記録 */
+  .entries { list-style: none; margin: 0; padding: 0; }
+  .entry { display: grid; grid-template-columns: 7.5rem 1fr; gap: 0 1.25rem; padding: 1.1rem 0; border-bottom: 2px dotted var(--sepia); }
+  .entry:first-child { border-top: 2px dotted var(--sepia); }
+  .entry time { font-family: var(--latin); font-size: 1rem; color: var(--sepia); line-height: 2.1; white-space: nowrap; }
+  .entry p { margin: 0; text-align: left; }
+  @media (max-width: 30rem) {
+    .entry { grid-template-columns: 1fr; }
+    .entry time { line-height: 1.6; }
+  }
+
+  footer { margin-top: 3rem; padding-top: 1rem; border-top: 4px double var(--ink); text-align: center; font-size: 0.85rem; color: var(--sepia); line-height: 1.8; }
+  footer .latin { font-family: var(--latin); font-style: italic; font-size: 0.95rem; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <nav class="topnav" aria-label="サイト内の移動">
+    <a href="index.html">目次</a>
+    <a href="blog.html" aria-current="page">ノート</a>
+    <a href="column.html">コラム</a>
+    <a href="about.html">このサイトについて</a>
+  </nav>
+
+  <header class="head">
+    <h1>ノート</h1>
+    <p class="latin">Carnet de notes</p>
+  </header>
+
+  <p class="lead">勉強の進み具合を、その日のうちに書き留める場所です。新しい記録が上に並びます。</p>
+
+  <!--
+    記録を足すときは、下の <li class="entry"> を1つコピーして、
+    いちばん上（<ul class="entries"> の直後）に貼り、日付と文章を書き換えてください。
+  -->
+  <ul class="entries">
+
+    <li class="entry">
+      <time datetime="2026-10-01">2026.10.01</time>
+      <p>今日から昆虫の勉強サイトを作りはじめた。まずはトップページから。スカラベの標本画を描いたら、思ったより虫っぽくなって満足。</p>
+    </li>
+
+    <li class="entry">
+      <time datetime="2026-09-28">2026.09.28</time>
+      <p>図書館で昆虫図鑑を借りた。チョウとガの違いは、翅のたたみ方や触角の形を見るとわかるらしい。次に外で蛾を見つけたら、触角を観察してみる。</p>
+    </li>
+
+    <li class="entry">
+      <time datetime="2026-09-25">2026.09.25</time>
+      <p>庭でバッタを見つけた。ずっと動かないので近づいて観察した。後ろ脚の筋肉がすごい。スケッチを3枚描いた。</p>
+    </li>
+
+  </ul>
+
+  <footer>
+    <div class="latin">Souvenirs d’un petit entomologiste</div>
+    <div>虫の観察記</div>
+  </footer>
+
+</div>
+</body>
+</html>
